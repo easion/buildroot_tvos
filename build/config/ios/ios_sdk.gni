@@ -42,7 +42,7 @@ if (ios_sdk_path == "") {
   if (!use_ios_simulator && ios_device_sdk_path == "") {
     ios_sdk_args += [
       "--sdk",
-      "iphoneos",
+      "appletvos",
     ]
     _ios_device_sdk_result =
         exec_script("ios_sdk.py", ios_sdk_args, "list lines")
@@ -52,7 +52,7 @@ if (ios_sdk_path == "") {
   if (use_ios_simulator && ios_simulator_sdk_path == "") {
     ios_sdk_args += [
       "--sdk",
-      "iphonesimulator",
+      "appletvsimulator",
     ]
     _ios_sim_sdk_result = exec_script("ios_sdk.py", ios_sdk_args, "list lines")
     ios_simulator_sdk_path = _ios_sim_sdk_result[0]
